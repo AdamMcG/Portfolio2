@@ -1,19 +1,23 @@
-import { Button, useColorMode } from 'theme-ui';
+import { Box, Switch,  useColorMode } from 'theme-ui';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ColorModeToggle() {
+function ColorModeToggle(props) {
   const [colorMode, setColorMode] = useColorMode();
   return (
-    <div>
-      <Button
+    <Box p={props.p}>
+      <Switch label={"Dark Mode"}
         onClick={() => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default');
         }}
       >
-        {colorMode === 'default' ? 'Dark' : 'Light'}
-      </Button>
-    </div>
+      </Switch>
+      </Box>
   );
+}
+
+ColorModeToggle.propTypes = {
+  p: PropTypes.string
 }
 
 export default ColorModeToggle;
