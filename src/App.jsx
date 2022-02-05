@@ -1,5 +1,5 @@
 import {
-  Flex, Container, NavLink, ThemeProvider,
+  Flex, Container, NavLink, ThemeProvider, Box
 } from 'theme-ui';
 import React from 'react';
 import theme from './theme';
@@ -23,11 +23,11 @@ function App() {
         </Container>
       </header>
       <body>
-        <Container p={4}>
-          <About/>
-          <Projects/>
-          <ContactUs />
-        </Container>
+        <Box p={5}>
+          <About p={5}/>
+          <Projects p={5}/>
+          <ContactUs p={5} />
+        </Box>
       </body>
       <footer>
         <p>

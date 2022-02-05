@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Container } from "theme-ui";
 
-function About () {
+function About (props) {
     
     return (
-        <Container>
+        <Container p={props.p}>
             <h3>
                 About
             </h3>
@@ -38,5 +39,9 @@ function About () {
         </Container>
     );
 };
+
+About.propTypes = {
+    p: PropTypes.String,
+}
 
 export default About;

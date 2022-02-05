@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Container } from "theme-ui";
 
-function Projects() {
+function Projects(props) {
 
     return (
-        <Container>
+        <Container p={props.p}>
             <h3>
                 Projects
             </h3>
@@ -37,6 +38,10 @@ function Projects() {
           </p>
         </Container>
     );
+}
+
+Projects.propTypes = {
+    p: PropTypes.String
 }
 
 export default Projects;
