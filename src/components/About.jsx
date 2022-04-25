@@ -1,15 +1,41 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Container } from "theme-ui";
+import { Container, Paragraph } from "theme-ui";
 
 function About (props) {
     
     return (
-        <Container p={props.p}>
+        <Container id='about' p={props.p}>
             <h3>
                 About
             </h3>
-            <p>
+            <Paragraph>
+            I think when learning language it is very helpful to get an idea of how and
+            what about people make jokes, so me and my friends are trying
+            to organise stand-up comedy nights in Russian language
+            and we would welcome anyone who is
+            interested and not only native Russian speakers.
+            We would welcome anyone interested. Our
+            events are not free (£5 or £10),
+            but we not earning anything from them neither, we have to pay for the venue,
+            cover transport costs,
+            as we all live in different cities and will need to travel a lot,
+            put some money into advertising and pay for the mics, speakers, etc.
+          </Paragraph>
+          <Paragraph>
+            I think when learning language it is very helpful to get an idea of how and
+            what about people make jokes, so me and my friends are trying
+            to organise stand-up comedy nights in Russian language
+            and we would welcome anyone who is
+            interested and not only native Russian speakers.
+            We would welcome anyone interested. Our
+            events are not free (£5 or £10),
+            but we not earning anything from them neither, we have to pay for the venue,
+            cover transport costs,
+            as we all live in different cities and will need to travel a lot,
+            put some money into advertising and pay for the mics, speakers, etc.
+          </Paragraph>
+            <Paragraph>
             I think when learning language it is very helpful to get an idea of how and
             what about people make jokes, so me and my friends are trying
             to organise stand-up comedy nights in Russian language
@@ -35,7 +61,7 @@ function About (props) {
             cover transport costs,
             as we all live in different cities and will need to travel a lot,
             put some money into advertising and pay for the mics, speakers, etc.
-          </p>
+          </Paragraph>
         </Container>
     );
 };

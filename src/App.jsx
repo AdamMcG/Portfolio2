@@ -1,38 +1,53 @@
 import {
-  Flex, Container, NavLink, ThemeProvider, Box
+  Flex, Container, NavLink, ThemeProvider, Box, Divider, Button
 } from 'theme-ui';
-import React from 'react';
+import React, { useState } from 'react';
 import theme from './theme';
 import ColorModeToggle from './components/ColorModeToggle';
-import ContactUs from './components/ContactUs';
+import ContactUsModal from './components/ContactUsModal';
 import About from './components/About';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import FooterContent from './components/FooterContent';
 
 function App() {
+  //Bring state logic into component
+  const [open, setOpen] = useState(false);
   return (
     <ThemeProvider theme={theme}>
       <header>
-        <Container>
+        <Container sx={{
+          position: 'fixed',
+          backgroundColor: 'darken',
+          scrollBehavior: 'smooth'
+        }}>
           <Flex as="nav">
-            <NavLink p={2}>About</NavLink>
-            <NavLink p={2}>Projects</NavLink>
-            <NavLink p={2}>Experience</NavLink>
-            <NavLink p={2}>Interests</NavLink>
-            <ColorModeToggle p={2} />
+            <NavLink href='#about' p={2}>About</NavLink>
+            <NavLink href='#experience' p={2}>Experience</NavLink>
+            <NavLink href='#projects' p={2}>Projects</NavLink>
+            <Box sx={{
+              justifyContent: 'flex-end'
+            }}>
+              <ColorModeToggle p={2} />
+            </Box>
           </Flex>
         </Container>
       </header>
       <body>
-        <Box p={5}>
-          <About p={5}/>
-          <Projects p={5}/>
-          <ContactUs p={5} />
-        </Box>
+        <Container p={6}>
+          <About p={1} />
+          <Divider />
+          <Experience p={1}/>
+          <Divider />
+          <Projects p={1} />
+          <Divider />
+          <ContactUsModal/>
+        </Container>
       </body>
       <footer>
-        <p>
-          Testing Footer Test
-        </p>
+        <Box p={1}>
+        <FooterContent p={5}/>
+        </Box>
       </footer>
     </ThemeProvider>
   );

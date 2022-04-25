@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 function ColorModeToggle(props) {
   const [colorMode, setColorMode] = useColorMode();
   return (
-    <Box p={props.p}>
-      <Switch label={"Dark Mode"}
+    <Box p={props.p} pl={props.pl}>
+      <Switch label={"theme"}
         onClick={() => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default');
         }}
@@ -17,7 +17,9 @@ function ColorModeToggle(props) {
 }
 
 ColorModeToggle.propTypes = {
-  p: PropTypes.string
+  p: PropTypes.string,
+  pl: PropTypes.string,
+  pr: PropTypes.string
 }
 
 export default ColorModeToggle;

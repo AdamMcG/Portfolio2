@@ -1,4 +1,6 @@
-const theme = {
+import { withModalTheme } from "@mattjennings/react-modal"
+
+const theme = withModalTheme({
   space: [
     0,
     4,
@@ -11,10 +13,10 @@ const theme = {
     512,
   ],
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    monospace: 'Menlo, monospace',
-  },
+    body: '"Raleway", Arial, Roboto, sans-serif',
+    heading: '"Raleway", Roboto, sans-serif',
+    monospace: '"Raleway", sans-serif'
+    },
   fontSizes: [
     12,
     14,
@@ -44,16 +46,32 @@ const theme = {
     muted: '#e6e6e6',
     gray: '#dfe3e8',
     accent: '#f49342',
-    darken: '#00044c',
+    darken: '#cccaca',
     modes: {
       dark: {
-        text: '#3e4155',
+        text: '#fff',
         background: '#000639',
         primary: '#9c6ade',
         secondary: '#b4e1fa',
         highlight: '#b7ecec',
         muted: '#e6e6e6',
+        darken: '#000321'
       },
+    },
+  },
+  cards: {
+    primary: {
+      padding: 2,
+      borderRadius: 4,
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+      border: '1px solid',
+      borderColor: 'secondary',
+    },
+    compact: {
+      padding: 1,
+      borderRadius: 2,
+      border: '1px solid',
+      borderColor: 'secondary',
     },
   },
   buttons: {
@@ -113,6 +131,9 @@ const theme = {
       fontWeight: 'heading',
       fontSize: 0,
     },
+    hr: {
+      color: 'text',
+    },
     p: {
       color: 'text',
       fontFamily: 'body',
@@ -150,6 +171,38 @@ const theme = {
       maxWidth: '100%',
     },
   },
-};
+  modals: {
+    // add a new `outlined` variant that can be used on <Modal />
+    outlined: {
+      backgroundColor: 'background',
+      border: '5px solid',
+      borderRadius: '5px',
+      borderColor: 'gray',
+      display: 'flex',
+      flexDirection: 'column',
+      maxHeight: '100vh',
+      minHeight: '16rem',
+      minWidth: '50rem',
+      maxWidth: '100rem',
+      position: 'absolute',
+      top: ['25%', '25%', '10%'],
+      zIndex: 'modal',
+    },
+
+    // will be used for the `outlined` variant when the modal is in full screen
+    outlinedFullScreen: {
+      backgroundColor: 'background',
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      maxHeight: '200vh',
+      height: `fill-available`,
+      position: 'absolute',
+      top: 0,
+      width: '200vw',
+      zIndex: 'modal',
+    },
+  },
+});
 
 export default theme;
